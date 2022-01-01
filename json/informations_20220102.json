@@ -1,0 +1,62 @@
+[
+    {
+        "title": "PyQコンテンツ改善β版-12月23日リリースのお知らせ　",
+        "description": "12月23日のリリース内容についてお知らせをいたします。",
+        "date": "2021-12-27",
+        "id": "pyq_release_211227"
+    },
+    {
+        "title": "短期集中プログラミング！休暇におすすめのPyQ学習計画を紹介します。",
+        "description": "PyQユーザーの皆様やPyQで学習してみようかな？とお考えの方に向けて、過去の記事から、PyQを使ったおすすめ学習計画の記事をまとめて紹介します。 また、1年の間に更新された、新しい問題についても紹介します。",
+        "date": "2021-12-24",
+        "id": "_pyq_curriculum_211224"
+    },
+    {
+        "title": "SyntaxError: invalid syntax. Perhaps you forgot a comma?とは何ですか？",
+        "description": "SyntaxError: invalid syntax. Perhaps you forgot a comma?というエラーの意味と考えられる原因を紹介します。",
+        "date": "2021-12-22",
+        "id": "python_kaiketsu_211222"
+    },
+    {
+        "title": "【12/28〜1/4】PyQの問い合わせ・質問機能の回答（Python学習サポート）休業のお知らせ",
+        "description": "PyQの問い合わせ・質問機能の回答（Python学習サポート）休業のお知らせです。",
+        "date": "2021-12-21",
+        "id": "pyq_news_211221"
+    },
+    {
+        "title": "SyntaxError: '(' was never closed の原因とエラーの読み解き方を紹介します",
+        "description": "SyntaxError: '(' was never closedの原因とエラーの読み解き方を紹介します。",
+        "date": "2021-12-15",
+        "id": "python_kaiketsu_211215"
+    },
+    {
+        "title": "PyQコンテンツ改善β版-12月8日リリースのお知らせ",
+        "description": "2021年8月から、PyQチームは一部のコンテンツの改訂を行っています。今回は、12月8日のリリース内容についてお知らせをいたします。",
+        "date": "2021-12-10",
+        "id": "pyq_release_211210"
+    },
+    {
+        "title": "書籍コラボキャンペーン「スラスラ読める Pythonふりがなプログラミング スクレイピング入門」",
+        "description": "「スラスラ読める Pythonふりがなプログラミング スクレイピング入門」についてとPyQとのコラボレーションキャンペーンの内容をご紹介します。",
+        "date": "2021-12-09",
+        "id": "pyq_news_211209"
+    },
+    {
+        "title": "アドベントカレンダーって何？年末恒例技術ブログイベントを紹介します",
+        "description": "年末恒例の技術記事イベント、アドベントカレンダーについての記事です。アドベントカレンダーの概要や、どこで読める・参加できるのか代表的な媒体等を紹介します。",
+        "date": "2021-12-01",
+        "id": "it_tips_211201"
+    },
+    {
+        "title": " SyntaxError: unterminated string literal の読み解き方と解決方法を紹介します",
+        "description": "SyntaxError: unterminated string literalの原因とエラーの読み解き方を紹介します。",
+        "date": "2021-11-24",
+        "id": "python_kaiketsu_211124"
+    },
+    {
+        "title": "PyCon JP 2021で、PyQ運営会社のメンバーが登壇しました。インタビュー記事を連載します",
+        "description": "2021年10月15日（金）, 16日（土）に、日本最大級のPythonカンファレンスであるPyCon JP 2021が開催されました。 Python学習チャンネルを運営する株式会社ビープラウドからも登壇したメンバーがいます。 せっかくなので、メンバーがどんな発表をしたのか紹介するとともに、 ひとりひとりへのインタビュー記事を連載することにしました。 本記事は、連載予定のメンバーと発表内容の紹介リストです。 随時連載目次として更新していく予定です。",
+        "date": "2021-11-19",
+        "id": "python_events_211119"
+    }
+]

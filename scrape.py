@@ -1,19 +1,18 @@
-# coding:utf-8
 import requests
 from bs4 import BeautifulSoup
-import re
+from urllib.parse import urlparse
 from datetime import date
 import json
 
 # リンク一覧をスクレイピングし、リンクURLのリストとして出力
 
-def scrape_html(url):    
+def return_soup(url):
     response = requests.get(url)
     response.encoding = response.apparent_encoding
     soup = BeautifulSoup(response.content, 'html.parser')
     return soup
 
-def make_article_list(soup):
+def return_scrape_pages(soup):
     link_lists = soup.select('a.entry-title-link')
     url_list = []
     for link_list in link_lists:
@@ -25,39 +24,45 @@ def make_article_list(soup):
 # 記事情報として、タイトル・ディスクリプション・ファイル名を辞書に格納する
 # それぞれの記事情報をリストに格納する
 
+def url_to_id(url):
+    path = urlparse(url).path
+    target = "/entry/"
+    index = path.find(target)
+    id = path[index+len(target):]
+    return id
+
 def make_article_dict(url_list):
-    article_informations = []
+    informations = []
 
     for url in url_list:
-        article = scrape_html(url)
-        article_title = article.select_one('a.entry-title-link').text
-        article_description = article.select_one('meta[name = "description"]').get('content')
-        article_date_row = article.select_one('.entry-header > .entry-date').text
-        article_date = article_date_row.replace('\n', '')
-        article_id = re.sub('^https:\/\/blog\.pyq\.jp\/entry\/', '', url)
-        article_information = {
-            'title' : article_title,
-            'description' : article_description,
-            'date' : article_date,
-            'id' : article_id,
+        id = url_to_id(url)
+        article = return_soup(url)
+        title = article.select_one('a.entry-title-link').text
+        description = article.select_one('meta[name = "description"]').get('content')
+        date_raw = article.select_one('.entry-header > .entry-date').text
+        date = date_raw.strip()
+        information = {
+            'title' : title,
+            'description' : description,
+            'date' : date,
+            'id' : id
         }
-        article_informations.append(article_information)
-    return article_informations
+        informations.append(information)
+    return informations
 
-if __name__ == "__main__":
+def main():
     index_url = "https://blog.pyq.jp/"
-    soup = scrape_html(index_url)
-    url_list = make_article_list(soup)
-    article_informations = make_article_dict(url_list)
+    soup = return_soup(index_url)
+    url_list = return_scrape_pages(soup)
+    informations = make_article_dict(url_list)
 
     today = date.today()
     str_today = today.strftime('%Y%m%d')
-    file_name = 'article_informations_' + str_today
+    file_name = 'informations_' + str_today
     json_path = 'json/' + file_name + '.json'
 
     with open(json_path, 'w', encoding='utf-8') as f:
-        json.dump(article_informations, f, indent=4)
+        json.dump(informations, f, indent=4, ensure_ascii=False)
 
-
-
-
+if __name__ == "__main__":
+    main()
